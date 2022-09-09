@@ -5,15 +5,16 @@ find_package(catkin REQUIRED COMPONENTS
   roscpp
   rospy
   std_msgs
-  limo_base
+ # limo_base
   sound_play
+  limo_msg
 )
+
 
 catkin_package(
   INCLUDE_DIRS include
   LIBRARIES limo_demo
-  CATKIN_DEPENDS roscpp rospy std_msgs limo_base sound_play
-  DEPENDS system_lib
+  CATKIN_DEPENDS roscpp rospy std_msgs sound_play
 )
 
 include_directories(

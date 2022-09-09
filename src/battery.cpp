@@ -4,12 +4,12 @@
 #include "std_msgs/Header.h"
 #include "std_msgs/Bool.h"
 #include "sound_play/sound_play.h"
-#include "limo_base/LimoStatus.h" 
+#include "limo_msg/_LimoStatus.h" 
 
 class BATTERY_CHECK{
 	public:
 		ros::NodeHandle n;
-		void batteryCallback(const limo_base::LimoStatus& msg);
+		void batteryCallback(const limo_msg::_LimoStatus& msg);
 		ros::Subscriber sub = n.subscribe("limo_status", 10, &BATTERY_CHECK::batteryCallback, this);
 		ros::Publisher charge_pub = n.advertise<std_msgs::Bool>("charge",1000);
 		ros::Rate rate_;
@@ -31,7 +31,7 @@ class BATTERY_CHECK{
 
 };
 
-void BATTERY_CHECK::batteryCallback(const limo_base::LimoStatus& msg)
+void BATTERY_CHECK::batteryCallback(const limo_msg::_LimoStatus& msg)
 {
 	std_msgs::Bool charge;
 	sound_play::SoundClient sound_client;

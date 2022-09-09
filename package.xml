@@ -19,7 +19,7 @@
   <exec_depend>rospy</exec_depend>
   <exec_depend>std_msgs</exec_depend>
   <depend>sound_play</depend>
-  <depend>limo_base</depend>
+  <!--depend>limo_base</depend-->
 
 
   <!-- The export tag contains other, unspecified, tags -->
